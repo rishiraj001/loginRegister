@@ -17,7 +17,7 @@ router.get('/', (req,res) => {
 
 router.get('/profile', passport.checkAuthentication, userController.profile);
 router.get('/register', userController.register);
-router.get('/signIn', userController.signIn);
+router.get('http://localhost:8000/signIn', userController.signIn);
 router.get('/logout', userController.logout);
 
 router.post('/createUser', uploadSingleAvatar, userController.createUser);

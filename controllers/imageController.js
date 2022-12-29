@@ -7,7 +7,7 @@ exports.upload_image = function(req,res){
             title: "Upload Image"
         })
     }
-    return res.redirect('/api/')
+    return res.redirect('/')
 }
 
 exports.imageUploadRoute = async (req, res, next) => {
@@ -22,7 +22,7 @@ exports.imageUploadRoute = async (req, res, next) => {
 
         await image.save()
         console.log(image)
-        return res.redirect('/api/profile');
+        return res.redirect('/profile');
     }
     catch(err) {
         next(err)
@@ -39,7 +39,7 @@ exports.filterImage = async (req, res, next) => {
                 images : result,
             });
         }
-        return res.redirect('/api/profile');
+        return res.redirect('/profile');
     }
     catch(err) {
         console.log(err)

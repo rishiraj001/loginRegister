@@ -26,25 +26,25 @@
                 <%- include('filterImage') -%>
 
                 <br>
-                <a href="/api/getCombineData/<%=user.id%>"><button>Show Images</button></a>
+                <a href="/getCombineData/<%=user.id%>"><button>Show Images</button></a>
 
-                <a href="http:/api/upload_image"><button>Upload Image</button></a>
+                <a href="http:/upload_image"><button>Upload Image</button></a>
                 <br>
 
                 <br>
                 <li>
-                    <a href="http:/api/logout">Sign Out</a>
+                    <a href="http:/logout">Sign Out</a>
                 </li>
 
             <% } else { %> 
                 <div style="text-align: center;margin-top: 320px;">
                     <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home Page</h1>
                     <ul>
-                        <a href="http:/api/signIn"><button>Sign In</button></a>
+                        <a href="http:/signIn"><button>Sign In</button></a>
                     </ul>
                     <br>
                     <ul>
-                        <a href="http:/api/register"><button>Sign Up</button></a>
+                        <a href="http:/register"><button>Sign Up</button></a>
                     </ul>
                 </div>
             <% } %> 

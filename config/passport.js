@@ -46,7 +46,7 @@ passport.deserializeUser((id, done) => {
 
 passport.checkAuthentication = (req, res, next) => {
     if(req.isAuthenticated()) return next();
-    return res.redirect('/api/signIn');
+    return res.redirect('/signIn');
 }
 
 passport.setAuthenticatedUser = (req, res, next) => {

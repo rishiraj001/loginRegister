@@ -8,7 +8,7 @@ const passport = require('passport')
 
 router.get('/', (req,res) => {
     if(req.isAuthenticated()) {
-        return res.redirect('/api/profile')
+        return res.redirect('/profile')
     }
     return res.render('profile',{
         title: "Home Page",
@@ -24,7 +24,7 @@ router.post('/createUser', uploadSingleAvatar, userController.createUser);
 
 router.post('/loginUser', passport.authenticate(
     'local',
-    { failureRedirect: '/api/signIn' }
+    { failureRedirect: '/signIn' }
 ),  userController.loginUser );
 
 //filter images

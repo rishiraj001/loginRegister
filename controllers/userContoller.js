@@ -10,7 +10,7 @@ exports.profile = function(req,res){
 
 exports.register = function(req,res){
     if(req.isAuthenticated()) {
-        return res.redirect('/api/profile')
+        return res.redirect('/profile')
     }
     return res.render('register',{
         title: "Sign Up"
@@ -19,7 +19,7 @@ exports.register = function(req,res){
 
 exports.signIn = function(req,res){
     if(req.isAuthenticated()) {
-        res.redirect('/api/profile')
+        res.redirect('/profile')
     }
     else return res.render('login',{
         title: "Sign In"
@@ -50,7 +50,7 @@ exports.createUser = async (req,res) => {
 
         user.password = await bcrypt.hash(user.password , 10)
         await user.save()
-        return res.redirect('/api/signIn');
+        return res.redirect('/signIn');
     }
     catch(error){
         res.status(500).json({error: 'error while creating user'})
@@ -58,7 +58,7 @@ exports.createUser = async (req,res) => {
 }
 
 exports.loginUser = async (req, res) => {
-    res.redirect('/api/profile');
+    res.redirect('/profile');
 }
 
 exports.findAllUsers = async (req,res) => {
@@ -72,6 +72,6 @@ exports.logout = (req, res, next)=>{
         if (err) { 
             return next(err); 
         }
-        res.redirect('/api');
+        res.redirect('/');
     });
 }

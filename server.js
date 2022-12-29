@@ -55,7 +55,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(passport.setAuthenticatedUser)
 
-app.use('/api', require('./routes/router'));
+app.use('/', require('./routes/router'));
 app.use('/uploads', express.static('uploads'))
 
 app.listen(port, () => {

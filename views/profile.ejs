@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %> 
+    </title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <header>
+        <ul>
+            <% if(locals.user){ %> 
+                <h2>Profile</h2>
+                <p>
+                    <div>
+                        <img src="../uploads/<%= user.avatar.data %> " alt="image" class="avatar">
+                    </div>
+                </p>
+                <h3><p> Name: <%= user.name %>  </p></h3>
+                <h3><p> Email: <%= user.email %>  </p></h3>
+
+                <h4 style="color: crimson;">Image Gallery</h4>
+                <%- include('filterImage') -%>
+
+                <br>
+                <a href="/api/getCombineData/<%=user.id%>"><button>Show Images</button></a>
+
+                <a href="http:/api/upload_image"><button>Upload Image</button></a>
+                <br>
+
+                <br>
+                <li>
+                    <a href="http:/api/logout">Sign Out</a>
+                </li>
+
+            <% } else { %> 
+                <div style="text-align: center;margin-top: 320px;">
+                    <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home Page</h1>
+                    <ul>
+                        <a href="http:/api/signIn"><button>Sign In</button></a>
+                    </ul>
+                    <br>
+                    <ul>
+                        <a href="http:/api/register"><button>Sign Up</button></a>
+                    </ul>
+                </div>
+            <% } %> 
+        </ul>
+    </header>
+</body>
+</html>

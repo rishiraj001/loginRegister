@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+  </head>
+
+  <body>
+    <div>
+        <center>
+            <fieldset>
+                <legend><h1>Registration</h1></legend>
+                <form action="/api/createUser" method="POST" enctype="multipart/form-data">
+                    <pre>
+                        Name:        <input type="text" name="name" placeholder="Enter your name" required>
+                        Email:       <input type="email" name="email" placeholder="Enter your email" required>
+                        Mobile:      <input type="number" name="phone" placeholder="Enter your phone" required>
+                        Password:    <input type="password" name="password" placeholder="Password" required>
+                        Address:     <input type="text" name="address" placeholder="Enter your address" required>
+
+                        <div>
+                            <label for="avatar"></label>
+                                       Upload Avatar:  <input type="file" id="avatar" name="avatar" value="" required />
+                        </div>
+                        <div>
+                            <button type="submit">Submit</button>
+                        </div>
+                    </pre>
+                </form>
+            </fieldset>
+    </div>
+
+  </body>
+</html>

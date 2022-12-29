@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="/css/home.css">
+<% 
+const isTrue = images.some(data => data.image != null) 
+%>
+
+<% if(!isTrue) { %> 
+    <h1 style="text-align: center;margin-top: 350px;color: darkred;">No image to show</h1>
+    <% } else { %> 
+        <p>
+            <% for(data of images){%>
+                <div class="row">
+                    <div class="column">
+                        <img src="/uploads/<%= data.image.data %> " alt="image" class="image">
+                    </div>               
+                </div>
+            <% } %>
+        </p>
+<% } %>

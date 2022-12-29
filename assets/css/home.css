@@ -1,0 +1,20 @@
+body{
+    background-color: rgb(230, 216, 216);
+}
+.avatar {
+  vertical-align: middle;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+}
+
+.image {
+  /* align-items: center; */
+  width: 350px;
+  height: 350px;
+}
+.column {
+  float: left;
+  width: 23.33%;
+  padding: 5px;
+}
